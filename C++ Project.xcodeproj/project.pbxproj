@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1788C378204F84870004803F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C377204F84870004803F /* main.cpp */; };
+		1788C380204F87050004803F /* Area.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C37E204F87040004803F /* Area.cpp */; };
+		1788C383204F87F50004803F /* Interactables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C381204F87F50004803F /* Interactables.cpp */; };
+		1788C386204F88630004803F /* Inventory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C384204F88630004803F /* Inventory.cpp */; };
+		1788C389204F88D90004803F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C387204F88D90004803F /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		1788C374204F84870004803F /* C++ Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++ Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1788C377204F84870004803F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1788C37E204F87040004803F /* Area.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Area.cpp; sourceTree = "<group>"; };
+		1788C37F204F87050004803F /* Area.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Area.hpp; sourceTree = "<group>"; };
+		1788C381204F87F50004803F /* Interactables.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Interactables.cpp; sourceTree = "<group>"; };
+		1788C382204F87F50004803F /* Interactables.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Interactables.hpp; sourceTree = "<group>"; };
+		1788C384204F88630004803F /* Inventory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Inventory.cpp; sourceTree = "<group>"; };
+		1788C385204F88630004803F /* Inventory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Inventory.hpp; sourceTree = "<group>"; };
+		1788C387204F88D90004803F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		1788C388204F88D90004803F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				1788C377204F84870004803F /* main.cpp */,
+				1788C37E204F87040004803F /* Area.cpp */,
+				1788C37F204F87050004803F /* Area.hpp */,
+				1788C381204F87F50004803F /* Interactables.cpp */,
+				1788C382204F87F50004803F /* Interactables.hpp */,
+				1788C384204F88630004803F /* Inventory.cpp */,
+				1788C385204F88630004803F /* Inventory.hpp */,
+				1788C387204F88D90004803F /* Game.cpp */,
+				1788C388204F88D90004803F /* Game.hpp */,
 			);
 			path = "C++ Project";
 			sourceTree = "<group>";
@@ -119,7 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1788C386204F88630004803F /* Inventory.cpp in Sources */,
+				1788C383204F87F50004803F /* Interactables.cpp in Sources */,
+				1788C380204F87050004803F /* Area.cpp in Sources */,
 				1788C378204F84870004803F /* main.cpp in Sources */,
+				1788C389204F88D90004803F /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
