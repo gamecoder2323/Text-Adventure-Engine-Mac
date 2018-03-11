@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17844F832055ACB900F11C9A /* Area.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C37E204F87040004803F /* Area.cpp */; };
+		17844F842055ACC700F11C9A /* Interactables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C381204F87F50004803F /* Interactables.cpp */; };
+		17844F852055ACCC00F11C9A /* Inventory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C384204F88630004803F /* Inventory.cpp */; };
+		17844F882055AF5A00F11C9A /* libTextAdventureEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17844F782055AC7800F11C9A /* libTextAdventureEngine.a */; };
+		17844F892055AFEE00F11C9A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C387204F88D90004803F /* Game.cpp */; };
 		1788C378204F84870004803F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C377204F84870004803F /* main.cpp */; };
-		1788C380204F87050004803F /* Area.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C37E204F87040004803F /* Area.cpp */; };
-		1788C383204F87F50004803F /* Interactables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C381204F87F50004803F /* Interactables.cpp */; };
-		1788C386204F88630004803F /* Inventory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C384204F88630004803F /* Inventory.cpp */; };
-		1788C389204F88D90004803F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C387204F88D90004803F /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17844F782055AC7800F11C9A /* libTextAdventureEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTextAdventureEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1788C374204F84870004803F /* C++ Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++ Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1788C377204F84870004803F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1788C37E204F87040004803F /* Area.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Area.cpp; sourceTree = "<group>"; };
@@ -40,21 +42,51 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1788C371204F84870004803F /* Frameworks */ = {
+		17844F752055AC7800F11C9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1788C371204F84870004803F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17844F882055AF5A00F11C9A /* libTextAdventureEngine.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17844F792055AC7800F11C9A /* TextAdventureEngine */ = {
+			isa = PBXGroup;
+			children = (
+				1788C385204F88630004803F /* Inventory.hpp */,
+				1788C384204F88630004803F /* Inventory.cpp */,
+				1788C382204F87F50004803F /* Interactables.hpp */,
+				1788C381204F87F50004803F /* Interactables.cpp */,
+				1788C37F204F87050004803F /* Area.hpp */,
+				1788C37E204F87040004803F /* Area.cpp */,
+			);
+			path = TextAdventureEngine;
+			sourceTree = "<group>";
+		};
+		17844F872055AF5A00F11C9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1788C36B204F84860004803F = {
 			isa = PBXGroup;
 			children = (
 				1788C376204F84870004803F /* C++ Project */,
+				17844F792055AC7800F11C9A /* TextAdventureEngine */,
 				1788C375204F84870004803F /* Products */,
+				17844F872055AF5A00F11C9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				1788C374204F84870004803F /* C++ Project */,
+				17844F782055AC7800F11C9A /* libTextAdventureEngine.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,12 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				1788C377204F84870004803F /* main.cpp */,
-				1788C37E204F87040004803F /* Area.cpp */,
-				1788C37F204F87050004803F /* Area.hpp */,
-				1788C381204F87F50004803F /* Interactables.cpp */,
-				1788C382204F87F50004803F /* Interactables.hpp */,
-				1788C384204F88630004803F /* Inventory.cpp */,
-				1788C385204F88630004803F /* Inventory.hpp */,
 				1788C387204F88D90004803F /* Game.cpp */,
 				1788C388204F88D90004803F /* Game.hpp */,
 			);
@@ -84,7 +111,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		17844F762055AC7800F11C9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		17844F772055AC7800F11C9A /* TextAdventureEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17844F822055AC7A00F11C9A /* Build configuration list for PBXNativeTarget "TextAdventureEngine" */;
+			buildPhases = (
+				17844F742055AC7800F11C9A /* Sources */,
+				17844F752055AC7800F11C9A /* Frameworks */,
+				17844F762055AC7800F11C9A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextAdventureEngine;
+			productName = TextAdventureEngine;
+			productReference = 17844F782055AC7800F11C9A /* libTextAdventureEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		1788C373204F84870004803F /* C++ Project */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1788C37B204F84870004803F /* Build configuration list for PBXNativeTarget "C++ Project" */;
@@ -111,6 +165,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Stokesoft;
 				TargetAttributes = {
+					17844F772055AC7800F11C9A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					1788C373204F84870004803F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -130,26 +188,60 @@
 			projectRoot = "";
 			targets = (
 				1788C373204F84870004803F /* C++ Project */,
+				17844F772055AC7800F11C9A /* TextAdventureEngine */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		17844F742055AC7800F11C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17844F852055ACCC00F11C9A /* Inventory.cpp in Sources */,
+				17844F842055ACC700F11C9A /* Interactables.cpp in Sources */,
+				17844F832055ACB900F11C9A /* Area.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1788C370204F84870004803F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1788C386204F88630004803F /* Inventory.cpp in Sources */,
-				1788C383204F87F50004803F /* Interactables.cpp in Sources */,
-				1788C380204F87050004803F /* Area.cpp in Sources */,
 				1788C378204F84870004803F /* main.cpp in Sources */,
-				1788C389204F88D90004803F /* Game.cpp in Sources */,
+				17844F892055AFEE00F11C9A /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		17844F802055AC7900F11C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59UHNUU86S;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		17844F812055AC7900F11C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59UHNUU86S;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1788C379204F84870004803F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -272,6 +364,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17844F822055AC7A00F11C9A /* Build configuration list for PBXNativeTarget "TextAdventureEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17844F802055AC7900F11C9A /* Debug */,
+				17844F812055AC7900F11C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1788C36F204F84860004803F /* Build configuration list for PBXProject "C++ Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
