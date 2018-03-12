@@ -13,7 +13,7 @@
 
 Interactables::Interactables()
 {
-    isTriggered = 0;
+    isTriggered = false;
 }
 
 

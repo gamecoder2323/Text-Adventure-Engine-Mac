@@ -63,9 +63,13 @@ void Game::initAreas() {
     map[5][4].giveInteractions(allInteracts[4]);
     map[5][4].interactables[0].giveHint("There are stones in the wall that appear to be loose.");
     map[6][5].giveInteractions(allInteracts[0]);
+    
     map[6][6].giveInteractions(allInteracts[1]);
     map[6][6].interactables[0].giveHint("In front of the tower, there is an old door.");
     map[4][5].giveInteractions(allInteracts[0]);
+    map[5][6].giveInteractions(allInteracts[5]);
+    map[5][6].interactables[0].giveHint("There are crystals on the ground. It looks like you can carry them.");
+
     
     
     
@@ -76,9 +80,9 @@ void Game::initAreas() {
     areaSetUp(5, 5, "Mountains 1", "You are standing on a tall mountain. It is very snowy here. You look around. You appear to be on a large island. You can see miles of shoreline at the edges of the island. ");
     areaSetUp(5, 4, "Mountain Ravine", "You walk through a narrow ravine in the mountains. Erosion has worn down the stones of an unknown civilization. To the south, there appears to be a bridge. ");
     areaSetUp(6, 5, "Mountains 2", "You cross into rocky terrain. The mountain range stretches far to the east. To the north of you appears to be a weathered stone tower. It looks like it could reveal some clues about this island. ");
-    areaSetUp(6, 6, "Stone Tower", "You have come across an ancient tower. It's stone bricks look weathered from hundreds of years of erosion. It looks very unstable. You see a wooden door in the side of the structure. ");
+    areaSetUp(6, 6, "Stone Tower", "You have come across an ancient tower. It's stone bricks look weathered from hundreds of years of erosion. It looks very unstable. ");
     areaSetUp(4, 5, "Grasslands 1", "You have come to the boundary of the Grasslands. It is very flat and has a cool breeze that comes from the North. From here, you can see mountains to the East.");
-    
+    areaSetUp(5,6, "Glacial Ravine 1", "There is a layer of ice on the ground. You are in a wide ravine, the walls shimmer like crystals in the sun. ");
     
     
 }
@@ -91,13 +95,16 @@ void Game::initInteractables() {
     Interactables sword;
     Interactables explodable;
     Interactables stone;
+    Interactables crystals;
     
     //Initialize the properties of interactables
+    //The 'Property' is pretty much the verb.
     none.init("none", Property::NONE);
     openable.init("door", Property::UNLOCK);
     sword.init("sword", Property::GRAB);
     explodable.init("gunpowder", Property::FLAMMABLE);
     stone.init("stone", Property::HARD);
+    crystals.init("crystals", Property::GRAB);
     
     //
     allInteracts.push_back(none); //0
@@ -105,6 +112,7 @@ void Game::initInteractables() {
     allInteracts.push_back(sword); //2
     allInteracts.push_back(explodable); //3
     allInteracts.push_back(stone); //4
+    allInteracts.push_back(crystals); //5
     
     //Add new interacts above this line: put them at the bottom!
 }
@@ -115,12 +123,14 @@ void Game::initInventory() {
     Inventory sword("sword", Property::SHARP, Property::METAL);
     Inventory torch("torch", Property::WOOD, Property::FLAMMABLE);
     Inventory stone("stone", Property::HARD, Property::HEAVY);
+    Inventory crystals("crystals", Property::COLD, Property::HARD);
     
     //Add them to the list of items in the game
     allItems.push_back(key);
     allItems.push_back(sword);
     allItems.push_back(torch);
     allItems.push_back(stone);
+    allItems.push_back(crystals);
 }
 
 
@@ -191,7 +201,7 @@ void Game::confirm() {
 
 
 void Game::recognize(std::string input) {
-    int space = input.find(" ");
+    unsigned long space = input.find(" ");
     //int nounLength = input.length() - space;
     std::string verb = input.substr(0, space);
     std::string noun = input.substr(space + 1, input.length() - space);
@@ -240,7 +250,7 @@ void Game::grab(std::string noun) {
                     return;
                 }
                 else if (allItems[j].name == currentArea.interactables[i].nameOfObj) {
-                    if (map[x][y].interactables[i].isTriggered == 0) {
+                    if (!map[x][y].interactables[i].isTriggered && map[x][y].interactables[i].interactMatch == Property::GRAB) {
                         inventory[itemSlotIterator] = allItems[j];
                         print("You grabbed the " + inventory[itemSlotIterator].name + "!");
                         itemSlotIterator++;
