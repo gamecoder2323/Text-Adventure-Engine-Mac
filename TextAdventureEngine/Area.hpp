@@ -11,7 +11,7 @@
 #include "Inventory.hpp"
 #include "Interactables.hpp"
 
-enum class Action { GRAB, GO, LIGHT, TOSS, NONE }; // light is for stuff like 'light' a torch
+enum class Action { GRAB, GO, LIGHT, TOSS, NONE, ENTER, LEAVE }; // light is for stuff like 'light' a torch
 
 class Area
 {
@@ -25,6 +25,7 @@ public:
     std::vector<Interactables> interactables;
     std::string getHint();
     std::string generalDescription;
+    int subareaID;
 private:
     
     

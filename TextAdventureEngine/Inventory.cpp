@@ -38,7 +38,7 @@ void Inventory::setProperty(Property prop) {
 }
 
 bool Inventory::searchProperty(Property search) {
-    for (int i = 0; i < sizeof(itemProperty); ++i) {
+    for (unsigned int i = 0; i < sizeof(itemProperty); ++i) {
         if (itemProperty[i] == search) {
             return true;
         }

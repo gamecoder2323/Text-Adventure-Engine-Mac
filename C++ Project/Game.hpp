@@ -39,4 +39,9 @@ private:
     std::vector<Interactables> allInteracts;
     Area currentArea;
     void go(std::string noun);
+    void enter(std::string noun);
+    bool isInSubarea;
+    std::string checkInventory(Property property);
+    void leave();
+    Area subareas[50];
 };

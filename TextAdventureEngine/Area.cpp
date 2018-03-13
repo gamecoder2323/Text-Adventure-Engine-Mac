@@ -14,7 +14,8 @@
 
 Area::Area()
 {
-    
+    //The subarea ID defaults to -1, which doesn't exist...
+    subareaID = -1;
 }
 
 void Area::description(std::string describe, int x, int y) {
@@ -30,13 +31,16 @@ void Area::giveInteractions(Interactables interactable) {
 }
 
 std::string Area::getHint() {
-    //if (sizeof(interactables) > 0) {
-    for (unsigned int i = 0; i < sizeof(interactables); ++i) {
-        if (!interactables[i].isTriggered) {
-            
-            return interactables[i].hint;
+    std::string finalHint ("");
+    Interactables currentInteract;
+    if (sizeof(interactables) > 0) {
+        for (unsigned int i = 0; i < sizeof(interactables); ++i) {
+            currentInteract = interactables[i];
+            if (!currentInteract.isTriggered) {
+                return currentInteract.hint;
+            }
         }
+        return "";
+        
     }
-    return "";
-    //}
 }

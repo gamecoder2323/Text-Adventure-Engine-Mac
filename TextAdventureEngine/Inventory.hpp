@@ -10,7 +10,7 @@
 #include <vector>
 #include <iostream>
 
-enum class Property { NONE, WOOD, METAL, SHARP, HEAVY, FLAMMABLE, EXPLOSIVE, UNLOCK, GRAB, HARD, COLD };
+enum class Property { NONE, WOOD, METAL, SHARP, HEAVY, FLAMMABLE, EXPLOSIVE, UNLOCK, GRAB, HARD, COLD, DIG, OPEN, CLIMB, SWING, DRY, HOT };
 //really, "Item" class
 
 
