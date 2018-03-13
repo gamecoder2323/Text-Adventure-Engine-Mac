@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178131262058421800136FE7 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 178131242058421800136FE7 /* Player.cpp */; };
 		17844F832055ACB900F11C9A /* Area.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C37E204F87040004803F /* Area.cpp */; };
 		17844F842055ACC700F11C9A /* Interactables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C381204F87F50004803F /* Interactables.cpp */; };
 		17844F852055ACCC00F11C9A /* Inventory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C384204F88630004803F /* Inventory.cpp */; };
 		17844F882055AF5A00F11C9A /* libTextAdventureEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17844F782055AC7800F11C9A /* libTextAdventureEngine.a */; };
 		17844F892055AFEE00F11C9A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C387204F88D90004803F /* Game.cpp */; };
 		1788C378204F84870004803F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1788C377204F84870004803F /* main.cpp */; };
+		17B523992057AFB6001D1F17 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17B523972057AFB6001D1F17 /* Enemy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		178131242058421800136FE7 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		178131252058421800136FE7 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		17844F782055AC7800F11C9A /* libTextAdventureEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTextAdventureEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1788C374204F84870004803F /* C++ Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++ Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1788C377204F84870004803F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -39,6 +43,8 @@
 		1788C385204F88630004803F /* Inventory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Inventory.hpp; sourceTree = "<group>"; };
 		1788C387204F88D90004803F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		1788C388204F88D90004803F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		17B523972057AFB6001D1F17 /* Enemy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		17B523982057AFB6001D1F17 /* Enemy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				1788C377204F84870004803F /* main.cpp */,
 				1788C387204F88D90004803F /* Game.cpp */,
 				1788C388204F88D90004803F /* Game.hpp */,
+				17B523972057AFB6001D1F17 /* Enemy.cpp */,
+				17B523982057AFB6001D1F17 /* Enemy.hpp */,
+				178131242058421800136FE7 /* Player.cpp */,
+				178131252058421800136FE7 /* Player.hpp */,
 			);
 			path = "C++ Project";
 			sourceTree = "<group>";
@@ -208,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178131262058421800136FE7 /* Player.cpp in Sources */,
+				17B523992057AFB6001D1F17 /* Enemy.cpp in Sources */,
 				1788C378204F84870004803F /* main.cpp in Sources */,
 				17844F892055AFEE00F11C9A /* Game.cpp in Sources */,
 			);

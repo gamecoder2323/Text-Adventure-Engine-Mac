@@ -10,6 +10,10 @@
 #include "Inventory.hpp"
 #include <iostream>
 #include "Interactables.hpp"
+#include <stdlib.h>
+#include <time.h>
+#include "Enemy.hpp"
+
 
 //INSTRUCTIONS:
 //
@@ -45,6 +49,9 @@ Game::Game()
     initAreas();
     itemSlotIterator = 0;
     isInSubarea = false;
+    
+    srand(time(NULL) % BATTLE_CHANCES);
+
 }
 
 
@@ -156,6 +163,7 @@ void Game::initInventory() {
     Inventory shovel("shovel", Property::HARD, Property::HEAVY, Property::DIG);
     Inventory axe("axe", Property::HARD, Property::SHARP, Property::HEAVY);
     
+    sword.giveAttack(15);
     //Add them to the list of items in the game
     allItems.push_back(key);
     allItems.push_back(sword);
@@ -164,6 +172,11 @@ void Game::initInventory() {
     allItems.push_back(crystals);
     allItems.push_back(shovel);
     allItems.push_back(axe);
+    
+    for (int i = 0; i < 16; ++i) {
+        inventory[i].name = "none";
+        inventory[i].giveAttack(player.attack);
+    }
     
 }
 
@@ -199,6 +212,8 @@ void Game::initInventory() {
 void Game::mainGame() {
     std::string areaHint = "";
     while (true) {
+        checkBattle();
+        cls();
         if (!isInSubarea) {
             currentArea = map[x][y];
         } else {
@@ -207,9 +222,10 @@ void Game::mainGame() {
         for (int i = 0; i < sizeof(currentArea.interactables); ++i) {
             
         }
+        print(player.name + ":\n=============================================\n HP: " + std::to_string(player.hp) + "\n Fragments: *" + std::to_string(player.fragments) + "\n=============================================\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         areaHint = currentArea.getHint();
         currentArea.areaDescription = currentArea.generalDescription + areaHint;
-        print(currentArea.areaDescription);
+        print(currentArea.areaDescription + "\n");
         std::string in;
         std::getline(std::cin, in);
         recognize(in);
@@ -223,20 +239,19 @@ void Game::start() {
     print("\n\n\n\n\n\n\n\n                             WELCOME TO ARONTANIA\n\n\n\n             Type in 2-word commands, in the form of VERB-NOUN.\n\n\n\n\n\n\n\n");
     confirm();
     print("What is your name?");
-    std::getline(std::cin, name);
-    
-    print("Hello " + name + "!");
+    std::getline(std::cin, player.name);
+    print("Hello " + player.name + "!");
     confirm();
+    cls();
     mainGame();
 }
 
 void Game::print(std::string string) {
-    std::cout <<std::endl << string << std::endl;
+    std::cout <<std::endl << string;
 }
 
 void Game::confirm() {
     std::cin.ignore();
-    //system("cls");
 }
 
 
@@ -400,6 +415,37 @@ std::string Game::checkInventory(Property property) {
     }
     return "";
 }
+void Game::checkBattle() {
+    static int i;
+    i = rand() % BATTLE_CHANCES;
+    if (i == 5) { //the 5 is just a number I pulled from my head. It could be anything.
+        battle();
+    }
+}
+void Game::battle() {
+    Enemy enemy;
+    cls();
+    print("Enemy encountered! ");
+    confirm();
+    while(enemy.hp > 0) {
+        cls();
+        std::string battleText = "\nEnemy:\n=============================================\n HP: " + std::to_string(enemy.hp) + "\n Attack: " + std::to_string(enemy.attack) + "\n=============================================\n\n" + player.name + ":\n=============================================\n HP: " + std::to_string(player.hp) + "\n=============================================\n";
+        print(battleText);
+        for (int i = 0; i < 16; ++i) { //16 is the size of the Inventory.
+            print(std::to_string(i) + ": " + inventory[i].name + " - " + std::to_string(inventory[i].attack) + " attack power");
+        }
+        print("\nWhat would you like to use? (Type the corresponding number of the item you wish to use)\n");
+        int in;
+        std::cin >> in;
+        player.attack = inventory[in].attack;
+        enemy.hp -= player.attack;
+        player.hp -= enemy.attack;
+        print("Enemy took: " + std::to_string(player.attack) + " damage.\n\n" + player.name + " took: " + std::to_string(enemy.attack) + "\n");
+    }
+    print("\nEnemy defeated!");
+    confirm();
+    player.fragments += enemy.fragmentDrop;
+}
 
 void Game::leave() {
     if (isInSubarea) {
@@ -411,3 +457,35 @@ void Game::leave() {
 }
 
 //End of Engine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void Game::cls() {
+    std::cout << std::string(100, '\n');
+}

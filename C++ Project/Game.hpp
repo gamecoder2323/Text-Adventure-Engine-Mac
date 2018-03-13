@@ -10,6 +10,7 @@
 #include <vector>
 #include "Inventory.hpp"
 #include "Area.hpp"
+#include "Player.hpp"
 
 class Game
 {
@@ -18,6 +19,7 @@ public:
     void start();
     
 private:
+    const int BATTLE_CHANCES = 7;
     void initInventory();
     std::vector<Inventory> allItems;
     Inventory inventory[16];
@@ -42,6 +44,10 @@ private:
     void enter(std::string noun);
     bool isInSubarea;
     std::string checkInventory(Property property);
+    void checkBattle();
     void leave();
+    void battle();
+    Player player;
     Area subareas[50];
+    void cls();
 };

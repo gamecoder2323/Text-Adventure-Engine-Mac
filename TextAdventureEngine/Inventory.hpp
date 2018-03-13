@@ -22,9 +22,10 @@ public:
     Inventory(std::string objName, Property propOne);
     Inventory(std::string objName, Property propOne, Property propTwo);
     Inventory(std::string objName, Property propOne, Property propTwo, Property propThree);
-    
+    int attack;
     void setProperty(Property prop);
     bool searchProperty(Property search);
+    void giveAttack(int attackValue);
     
 private:
     std::vector<Property> itemProperty;

@@ -7,23 +7,26 @@
 //
 
 #include "Inventory.hpp"
+#include <stdlib.h>
 
 
 
 Inventory::Inventory() {
-    
+    attack = rand() % 3;
 }
 
 
 Inventory::Inventory(std::string objName, Property propOne) {
     name = objName;
     itemProperty.push_back(propOne);
+    attack = rand() % 3;
 }
 
 Inventory::Inventory(std::string objName, Property propOne, Property propTwo) {
     name = objName;
     itemProperty.push_back(propOne);
     itemProperty.push_back(propTwo);
+    attack = rand() % 3;
 }
 
 Inventory::Inventory(std::string objName, Property propOne, Property propTwo, Property propThree) {
@@ -31,6 +34,7 @@ Inventory::Inventory(std::string objName, Property propOne, Property propTwo, Pr
     itemProperty.push_back(propOne);
     itemProperty.push_back(propTwo);
     itemProperty.push_back(propThree);
+    attack = rand() % 3;
 }
 
 void Inventory::setProperty(Property prop) {
@@ -44,4 +48,8 @@ bool Inventory::searchProperty(Property search) {
         }
     }
     return false;
+}
+
+void Inventory::giveAttack(int newAttackValue) {
+    attack = newAttackValue;
 }
